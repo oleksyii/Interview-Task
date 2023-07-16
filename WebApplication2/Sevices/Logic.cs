@@ -4,11 +4,11 @@ namespace WebApplication2.Sevices
 {
     public class Logic : ILogic
     {
-        private Dictionary<char, int> generalLetterCount = new Dictionary<char, int>();
+        private Dictionary<char, int> generalLetterCount = new();
 
         public string FindLetter(string text)
         {
-            if(text.Length <= 0)
+            if( text.Length <= 0)
             {
                 return "";
             }
@@ -42,18 +42,19 @@ namespace WebApplication2.Sevices
                     if (letterCount[letter] == 1)
                     {
                         insertToDictionary(letter);
+                        break;
                     }
                 }
             }
-            generalLetterCount.Clear();
             return "The Desired letter is: " + getTheAnswer();
+            //generalLetterCount.Clear();
         }
 
         private void insertToDictionary(char letter)
         {
             if (generalLetterCount.ContainsKey(letter))
             {
-                generalLetterCount[letter]++;
+                generalLetterCount[letter] += 1;
             }
             else
             {
@@ -63,14 +64,15 @@ namespace WebApplication2.Sevices
 
         private char getTheAnswer()
         {
-            Regex regex = new Regex(@"^[a-z]$");
+            Regex regex = new Regex(@"^[A-Za-z]$");
 
             foreach (char letter in generalLetterCount.Keys)
-
             {
                 if (generalLetterCount[letter] == 1 && regex.IsMatch(letter.ToString()))
                 {
-                    return letter;
+                    char answear = letter;
+                    generalLetterCount.Clear();
+                    return answear;
                 }
             }
 
