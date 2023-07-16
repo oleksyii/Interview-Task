@@ -45,7 +45,8 @@ namespace WebApplication2.Sevices
                     }
                 }
             }
-                return "The Desired letter is: " + getTheAnswer();
+            generalLetterCount.Clear();
+            return "The Desired letter is: " + getTheAnswer();
         }
 
         private void insertToDictionary(char letter)
