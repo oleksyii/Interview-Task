@@ -1,3 +1,5 @@
+using WebApplication2.Sevices;
+
 namespace WebApplication2
 {
     public class Program
@@ -8,6 +10,8 @@ namespace WebApplication2
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddTransient<ILogic, Logic>();
 
             var app = builder.Build();
 
