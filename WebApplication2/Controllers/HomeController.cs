@@ -18,7 +18,7 @@ namespace WebApplication2.Controllers
 
         public IActionResult Index()
         {
-            string text = _service.FindLetter();
+            string text = _service.FindLetter("This is some text");
 
             ViewData["text"] = text;
 
