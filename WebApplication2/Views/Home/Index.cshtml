@@ -2,6 +2,10 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    @ViewData["text"];
+<div>
+    <form asp-action="Index">
+        <textarea rows=10 name="inputText" class="form-control mb-3 w-50"></textarea>
+        <button class="btn btn-primary mb-3" type="submit">Submit</button>
+    </form>
+    @ViewData["text"]
 </div>

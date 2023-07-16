@@ -8,6 +8,11 @@ namespace WebApplication2.Sevices
 
         public string FindLetter(string text)
         {
+            if(text.Length <= 0)
+            {
+                return "";
+            }
+
             //.ToLower() шоб ігнорувати кейс
 
             List<String> smt = new List<String>(text.Split(' '));
