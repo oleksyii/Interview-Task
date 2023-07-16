@@ -8,7 +8,7 @@ namespace WebApplication2.Sevices
 
         public string FindLetter(string text)
         {
-            if(text.Length <= 0)
+            if( text.Length <= 0)
             {
                 return "";
             }
